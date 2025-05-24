@@ -75,6 +75,6 @@ final readonly class CompanyController
     {
         $company->delete();
 
-        return response()->json([], 204);
+        return response()->json(status: 204);
     }
 }

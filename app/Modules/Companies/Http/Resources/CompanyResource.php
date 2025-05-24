@@ -22,7 +22,7 @@ final class CompanyResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'nip' => $this->nip,
+            'nip' => (string) $this->nip,
             'address' => $this->address,
             'city' => $this->city,
             'postcode' => $this->postcode,
