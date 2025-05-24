@@ -17,7 +17,8 @@ test('can create company', function () {
             'city' => 'City',
             'postcode' => '12-345',
         ])
-        ->assertCreated();
+        ->assertCreated()
+        ->assertValid();
 
     $company = Company::query()->firstOrFail();
 

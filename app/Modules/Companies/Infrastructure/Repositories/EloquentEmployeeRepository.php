@@ -24,6 +24,7 @@ final class EloquentEmployeeRepository extends EloquentRepository implements Emp
         return $this->getBuilder()
             ->with($this->getRelations())
             ->where('company_id', $companyId)
+            ->orderByDesc('id')
             ->get($this->getColumns());
     }
 

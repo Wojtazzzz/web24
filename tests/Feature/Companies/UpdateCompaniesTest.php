@@ -19,7 +19,8 @@ test('can update company', function () {
             'city' => 'City',
             'postcode' => '12-345',
         ])
-        ->assertOk();
+        ->assertOk()
+        ->assertValid();
 
     $company->refresh();
 

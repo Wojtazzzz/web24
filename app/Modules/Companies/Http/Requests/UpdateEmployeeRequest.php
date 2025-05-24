@@ -40,7 +40,7 @@ final class UpdateEmployeeRequest extends FormRequest
                     ->whereNot('id', $this->employee->getKey()),
             ],
             'phone' => [
-                'required',
+                'nullable',
                 'string',
                 'regex:/^[0-9]{9}$/',
             ],
@@ -54,7 +54,7 @@ final class UpdateEmployeeRequest extends FormRequest
             firstName: $this->safe()->string('first_name')->value(),
             lastName: $this->safe()->string('last_name')->value(),
             email: $this->safe()->string('email')->value(),
-            phone: $this->safe()->string('phone')->value(),
+            phone: '' !== $this->safe()->string('phone')->value() ? $this->safe()->string('phone')->value() : null,
         );
     }
 }
