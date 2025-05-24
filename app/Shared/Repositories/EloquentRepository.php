@@ -45,6 +45,7 @@ abstract class EloquentRepository extends Repository implements RepositoryInterf
 
     /**
      * @return TModel
+     *
      * @throws ModelNotFoundException
      */
     public function findFirstWhere(array $fields): Model

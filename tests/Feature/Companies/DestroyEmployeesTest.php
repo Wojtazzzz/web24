@@ -5,7 +5,6 @@ declare(strict_types=1);
 use App\Modules\Companies\Domain\Models\Company;
 use App\Modules\Companies\Domain\Models\Employee;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Testing\Fluent\AssertableJson;
 
 uses(RefreshDatabase::class);
 

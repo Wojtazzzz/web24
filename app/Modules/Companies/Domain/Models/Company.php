@@ -28,13 +28,6 @@ final class Company extends Model
 
     public $timestamps = false;
 
-    protected function casts(): array
-    {
-        return [
-            'nip' => 'string',
-        ];
-    }
-
     public function employees(): HasMany
     {
         return $this->hasMany(
@@ -42,5 +35,12 @@ final class Company extends Model
             foreignKey: 'company_id',
             localKey: 'id',
         );
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'nip' => 'string',
+        ];
     }
 }

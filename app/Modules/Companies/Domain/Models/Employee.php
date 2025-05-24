@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property-read string $email
  * @property-read ?string $phone
  */
-#[USEFactory(EmployeeFactory::class)]
+#[UseFactory(EmployeeFactory::class)]
 final class Employee extends Model
 {
     /** @use HasFactory<EmployeeFactory> */
@@ -27,12 +27,6 @@ final class Employee extends Model
 
     public $timestamps = false;
 
-    protected function casts(): array
-    {
-        return [
-            'phone' => 'string',
-        ];
-    }
     public function company(): BelongsTo
     {
         return $this->belongsTo(
@@ -40,5 +34,12 @@ final class Employee extends Model
             foreignKey: 'company_id',
             ownerKey: 'id',
         );
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'phone' => 'string',
+        ];
     }
 }

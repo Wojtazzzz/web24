@@ -42,7 +42,7 @@ final readonly class CompanyEmployeeController
 
     public function show(Company $company, Employee $employee): JsonResource
     {
-        abort_if($employee->company_id !== $company->getKey(), 404);
+        abort_if($company->getKey() !== $employee->company_id, 404);
 
         $company = $this->employeeRepository
             ->setColumns([
@@ -72,7 +72,7 @@ final readonly class CompanyEmployeeController
 
     public function update(UpdateEmployeeRequest $request, Company $company, Employee $employee, UpdateEmployee $action): JsonResource
     {
-        abort_if($employee->company_id !== $company->getKey(), 404);
+        abort_if($company->getKey() !== $employee->company_id, 404);
 
         $company = $action->dispatch($request->toDto());
 
@@ -81,7 +81,7 @@ final readonly class CompanyEmployeeController
 
     public function destroy(Company $company, Employee $employee): JsonResponse
     {
-        abort_if($employee->company_id !== $company->getKey(), 404);
+        abort_if($company->getKey() !== $employee->company_id, 404);
 
         $employee->delete();
 
