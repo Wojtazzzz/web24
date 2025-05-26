@@ -34,7 +34,7 @@ curl --location 'http://localhost/api/companies' \
 --header 'Accept: application/json' \
 --data '{
     "name": "Microsoft",
-    "nip": "123456789",
+    "nip": "1234567890",
     "address": "Redmond",
     "city": "Washington",
     "postcode": "12-123"
@@ -50,7 +50,7 @@ curl --location --request PATCH 'http://localhost/api/companies/{company}' \
 --header 'Accept: application/json' \
 --data '{
     "name": "Microsoft",
-    "nip": "123456789",
+    "nip": "1234567890",
     "address": "Redmond",
     "city": "Washington",
     "postcode": "12-123"
@@ -72,7 +72,7 @@ GET /api/companies/{company}/employees/{employee}
 ```
 
 ``` sh
-POST /api/companies/{company}/employees/
+POST /api/companies/{company}/employees
 
 curl --location 'http://localhost/api/companies/{company}/employees' \
 --header 'Accept: application/json' \
