@@ -7,6 +7,7 @@
 - Composer
 - [Docker / Laravel Sail](https://laravel.com/docs/12.x/sail)
 - Laravel Pint
+- PHPUnit / Laravel Pest
 
 ## Requirements
 
