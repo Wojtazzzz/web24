@@ -38,6 +38,7 @@ final class StoreEmployeeRequest extends FormRequest
                     ->where('company_id', $this->company->getKey()),
             ],
             'phone' => [
+                'sometimes',
                 'nullable',
                 'string',
                 'regex:/^[0-9]{9}$/',
